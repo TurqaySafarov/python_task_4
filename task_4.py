@@ -7,6 +7,14 @@ class Chess:
     
     def step(self):
         print("1")
+        
+        def checkmate(self):
+        print("Şah mat oldu! Oyun başa çatdı.")
+        
+
+class Sah(Chess):
+    def move(self):
+        print("Sah öz xanasından rəqib fiqurunun zərbəsi altında olmayan başqa qarışıq xanaya hərəkət edir.")
 
 class Piyada(Chess):
     def __init__(self, color, starting_square):
@@ -16,6 +24,11 @@ class Piyada(Chess):
     def move(self):
         print("Piyadalar ancaq qabağa hərəkət edə bilərlər.")
 
+class At(Piyada):
+    def move(self):
+        print("At L istiqametde hereket edir.")
+        
+
 class Fil(Chess):
     def __init__(self, color):
         super().__init__(color)
@@ -23,10 +36,6 @@ class Fil(Chess):
     
     def move(self):
         print("Fil ancaq diaqonal xanalarla hərəkət edir")
-
-class At(Piyada):
-    def move(self):
-        print("At L istiqametde hereket edir.")
 
 class Top(Chess):
     def move(self):
@@ -36,9 +45,6 @@ class Vezir(Chess):
     def move(self):
         print("Vezir şaquli, üfüqi və ya diaqonal xanalar üzrə hərəkət edir.")
 
-class Sah(Chess):
-    def move(self):
-        print("Sah öz xanasından rəqib fiqurunun zərbəsi altında olmayan başqa qarışıq xanaya hərəkət edir.")
 
 class ChessGame:
     def __init__(self, history, world_champions):
@@ -68,4 +74,3 @@ chess_game.display_world_champions()
 
 piyada = Piyada("ağ", "a2")
 print("Ağ piyada mövqesi:", piyada.starting_square)
-
